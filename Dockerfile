@@ -5,8 +5,8 @@ FROM centos:7
 LABEL maintainer="labeg@mail.ru" \
       io.k8s.description="Headless VNC Container with LXQt Desyktop manager" \
       io.k8s.display-name="Headless VNC Container based on Centos" \
-      io.openshift.expose-services="6901:http,5901:xvnc" \
-      io.openshift.tags="vnc, centos, xfce" \
+      io.openshift.expose-services="5901:xvnc" \
+      io.openshift.tags="vnc, centos, lxqt" \
       io.openshift.non-scalable=true
 
 
