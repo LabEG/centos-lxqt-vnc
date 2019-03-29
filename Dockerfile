@@ -13,23 +13,24 @@ LABEL maintainer="labeg@mail.ru" \
 ENV HOME=/home/headless
 
 
-RUN yum install -y epel-release dnf \
+RUN yum install -y --setopt=tsflags=nodocs epel-release dnf \
         && \
-        dnf install -y \
+        dnf install -y --setopt=tsflags=nodocs \
             tigervnc-server \
             openbox obconf-qt \
-            xterm htop nano gnome-system-monitor expect \
+            xterm htop nano gnome-system-monitor expect sudo \
             lxqt-about lxqt-common lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-qtplugin lxqt-runner lxqt-session network-manager-applet nm-connection-editor pcmanfm-qt \
         && \
         yum clean all && dnf clean all \
         && \
         rm -rf /var/cache/yum/* && rm -rf /var/cache/dnf/*
-# 202MB 428MB 597MB 765MB
+# 202MB 428MB 597MB 753MB
 
 
 RUN /bin/dbus-uuidgen --ensure && \
         useradd headless && \
-        mkdir -p ${HOME}/.vnc && \
+        mkdir -p ${HOME}/.vnc \
+        && \
         echo '#!/bin/sh' > ${HOME}/.vnc/xstartup && \
         echo 'exec startlxqt' >> ${HOME}/.vnc/xstartup \
         && \
