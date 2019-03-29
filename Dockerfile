@@ -13,9 +13,9 @@ LABEL maintainer="labeg@mail.ru" \
 ENV HOME=/home/headless
 
 
-RUN yum install -y --setopt=tsflags=nodocs epel-release dnf \
+RUN yum install -y epel-release dnf \
         && \
-        dnf install -y --setopt=tsflags=nodocs \
+        dnf install -y \
             tigervnc-server \
             openbox obconf-qt \
             xterm htop nano gnome-system-monitor expect sudo \
@@ -29,25 +29,19 @@ RUN yum install -y --setopt=tsflags=nodocs epel-release dnf \
 
 RUN /bin/dbus-uuidgen --ensure && \
         useradd headless && \
-        mkdir -p ${HOME}/.vnc \
+        echo "centos" | passwd --stdin root && \
+        echo "centos" | passwd --stdin headless
+
+
+COPY ./startup.sh ${HOME}
+RUN mkdir -p ${HOME}/.vnc \
         && \
         echo '#!/bin/sh' > ${HOME}/.vnc/xstartup && \
         echo 'exec startlxqt' >> ${HOME}/.vnc/xstartup \
-        && \
-        echo '#!/usr/bin/expect' > ${HOME}/startup.sh && \
-        echo 'spawn /usr/bin/vncserver -fg' >> ${HOME}/startup.sh && \
-        echo 'expect "Password:"' >> ${HOME}/startup.sh && \
-        echo 'send "$env(password)\r"' >> ${HOME}/startup.sh && \
-        echo 'expect "Verify:"' >> ${HOME}/startup.sh && \
-        echo 'send "$env(password)\r"' >> ${HOME}/startup.sh && \
-        echo 'expect "Would you like to enter a view-only password (y/n)?"' >> ${HOME}/startup.sh && \
-        echo 'send "n\r"' >> ${HOME}/startup.sh && \
-        echo 'expect eof' >> ${HOME}/startup.sh && \
-        echo 'wait' >> ${HOME}/startup.sh \
         && \
         chmod 777 -R ${HOME}
 
 
 WORKDIR ${HOME}
 USER headless
-ENTRYPOINT ["./startup.sh"]
+ENTRYPOINT ["expect", "./startup.sh"]
