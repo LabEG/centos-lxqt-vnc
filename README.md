@@ -14,12 +14,12 @@ docker run -e password="YOUR_VNC_PASSWORD" -it --rm -p5901:5901 labeg/centos-lxq
 ```
 
 ### For setup root and users password
-For using root user you must setup password for him, for make it launch command
+For use root user, you must set a password. 
 ```sh
 docker exec -u 0 -it CONTAINER_ID bash
 ```
 
-Enter 'passwd root' and set password for user root.
+Enter 'passwd root' and set password.
 
 ### Build
 ```sh
