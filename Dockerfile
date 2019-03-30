@@ -21,12 +21,13 @@ RUN yum install -y epel-release dnf \
             lxqt-about lxqt-common lxqt-config lxqt-globalkeys lxqt-notificationd \
             lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-qtplugin lxqt-runner \
             lxqt-session pcmanfm-qt \
+            dejavu-sans-mono-fonts \
             xterm nano htop expect sudo \
         && \
         yum clean all && dnf clean all \
         && \
         rm -rf /var/cache/yum/* && rm -rf /var/cache/dnf/*
-# 202MB 428MB 597MB 738MB
+# 202MB -> 738MB
 
 
 RUN /bin/dbus-uuidgen --ensure && \
