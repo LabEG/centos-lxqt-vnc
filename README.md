@@ -1,9 +1,9 @@
-# Docker image with headless VNC environments
+# Docker image with LXQT Desktop over headless VNC environments
 
-This repository contains a Docker image with headless VNC environments.
+This repository contains a Docker image with LXQT Desktop over headless VNC environments.
 
 
-![Docker VNC Desktop access via TightVNC Client](.pics/vnc_container_view.png)
+![Docker LXQT Desktop access via TightVNC Client](https://raw.githubusercontent.com/LabEG/centos-lxqt-vnc/master/.pics/vnc_container_view.png)
 
 
 ### Try
