@@ -27,7 +27,7 @@ RUN yum install -y epel-release dnf \
         yum clean all && dnf clean all \
         && \
         rm -rf /var/cache/yum/* && rm -rf /var/cache/dnf/*
-# 202MB -> 738MB
+# 202MB -> 648MB
 
 
 RUN /bin/dbus-uuidgen --ensure && \
@@ -40,9 +40,10 @@ COPY ./startup.sh ${HOME}
 RUN mkdir -p ${HOME}/.vnc \
         && \
         echo '#!/bin/sh' > ${HOME}/.vnc/xstartup && \
-        echo 'exec startlxqt' >> ${HOME}/.vnc/xstartup \
+        echo 'exec startlxqt' >> ${HOME}/.vnc/xstartup && \
+        chmod 775 ${HOME}/.vnc/xstartup \
         && \
-        chmod 777 -R ${HOME}
+        chown headless:headless -R ${HOME}
 
 
 WORKDIR ${HOME}
