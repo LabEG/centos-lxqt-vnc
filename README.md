@@ -30,3 +30,6 @@ docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p5901:5901 labeg
 ```sh
 docker build -t labeg/centos-lxqt-vnc .
 ```
+
+Build date:
+2019-04-09
