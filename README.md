@@ -6,7 +6,7 @@ The Image is automatically rebuilt every day, at midnight by GMT.
 
 All other software you can install yourself.
 
-![Docker LXQt Desktop access via TightVNC Client](https://raw.githubusercontent.com/LabEG/centos-lxqt-vnc/master/.pics/vnc_container_view.png)
+![Docker LXQt Desktop access via TightVNC Client](https://raw.githubusercontent.com/LabEG/centos-lxqt-vnc/master/.pics/vnc_container_view.jpg)
 
 
 ### Try
