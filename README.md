@@ -2,7 +2,9 @@
 
 This repository contains a Docker image with minimal Desktop installation and includes: CentOS minimal + OpenBox + LXQt + TigerVNC-Server.
 
-All other software and settings are performed manualy by you self. Example on next image showing LXQt with a modified theme to Kde-Plasma and installed Chromium, VSCode, Monodevelop (linux build of VisualStudio for Mac).
+The Image is automatically rebuilt every day, at midnight by GMT.
+
+All other software you can install yourself.
 
 ![Docker LXQt Desktop access via TightVNC Client](https://raw.githubusercontent.com/LabEG/centos-lxqt-vnc/master/.pics/vnc_container_view.png)
 
