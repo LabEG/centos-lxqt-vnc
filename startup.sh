@@ -1,6 +1,6 @@
 #!/usr/bin/expec
 
-spawn /usr/bin/vncserver -fg
+spawn /usr/bin/vncserver -fg -geometry 1920x1080 :1
 expect "Password:"
 send "$env(password)\r"
 expect "Verify:"
