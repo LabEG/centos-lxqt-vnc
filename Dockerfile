@@ -1,5 +1,5 @@
 
-FROM centos:8
+FROM centos:7
 
 
 LABEL maintainer="labeg@mail.ru" \
