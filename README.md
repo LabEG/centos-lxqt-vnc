@@ -21,6 +21,11 @@ If you want to use the container regularly:
 docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p5901:5901 labeg/centos-lxqt-vnc
 ```
 
+### Parameters
+- `-e password='YOUR_VNC_PASSWORD'` - password for VNC connections.
+- `-e resolution='1920x1080'` - resolution for virtual screen.
+- `--shm-size='64m'` - extend if firefox browser is crashing.
+
 ### FAQ
 - Defaul root and user password is 'centos'. Change it on first vnc connection for more security.
 - For change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select nice to you theme, example Kde-Plasma.

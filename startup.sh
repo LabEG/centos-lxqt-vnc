@@ -1,6 +1,10 @@
 #!/usr/bin/expec
 
-spawn /usr/bin/vncserver :1 -fg -geometry 1820x960
+# set screen resolution from environment variable 'resolution' or default 1820x960
+set SCREEN_RESOLUTION 1920x1080
+catch {set SCREEN_RESOLUTION $env(resolution)}
+
+spawn /usr/bin/vncserver :1 -fg -geometry $SCREEN_RESOLUTION
 expect "Password:"
 send "$env(password)\r"
 expect "Verify:"
