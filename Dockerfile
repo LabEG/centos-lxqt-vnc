@@ -1,5 +1,5 @@
 
-FROM fedora:latest
+FROM centos:7
 
 
 LABEL maintainer="labeg@mail.ru" \
@@ -13,18 +13,20 @@ LABEL maintainer="labeg@mail.ru" \
 ENV HOME=/home/headless
 
 
-RUN dnf install -y \
+RUN yum install -y epel-release dnf \
+        && \
+        dnf install -y \
             tigervnc-server \
             openbox obconf-qt \
             lxqt-about lxqt-common lxqt-config lxqt-globalkeys lxqt-notificationd \
             lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-qtplugin lxqt-runner \
             lxqt-session pcmanfm-qt \
             dejavu-sans-mono-fonts \
-            xterm nano htop expect sudo passwd \
+            xterm nano htop expect sudo \
         && \
-        dnf clean all \
+        yum clean all && dnf clean all \
         && \
-        rm -rf /var/cache/dnf/*
+        rm -rf /var/cache/yum/* && rm -rf /var/cache/dnf/*
 # 202MB -> 648MB
 
 
