@@ -13,13 +13,13 @@ All other software you can install yourself.
 ### Try
 If you just want to try the features:
 ```sh
-docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p5901:5901 labeg/centos-lxqt-vnc
+docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/centos-lxqt-vnc
 ```
 
 ### Use
 If you want to use the container regularly:
 ```sh
-docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p5901:5901 labeg/centos-lxqt-vnc
+docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/centos-lxqt-vnc
 ```
 
 ### Parameters
