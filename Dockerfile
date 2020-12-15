@@ -50,7 +50,8 @@ RUN mkdir -p ${HOME}/.vnc \
 WORKDIR ${HOME}
 USER headless
 
-RUN echo '[General]' > ${HOME}/.config/lxqt/lxqt.conf \
+RUN mkdir -p ${HOME}/.config/lxqt \
+        echo '[General]' > ${HOME}/.config/lxqt/lxqt.conf \
         echo 'theme=kde-plasma' >> ${HOME}/.config/lxqt/lxqt.conf
 
 ENTRYPOINT ["expect", "./startup.sh"]
