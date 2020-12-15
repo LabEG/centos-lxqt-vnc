@@ -21,7 +21,7 @@ RUN dnf install -y \
             lxqt-session pcmanfm-qt \
             dejavu-sans-mono-fonts \
             xterm nano htop expect sudo \
-            passwd binutils \
+            passwd binutils wget \
         && \
         strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 \
         && \
