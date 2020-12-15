@@ -53,7 +53,12 @@ USER headless
 
 RUN mkdir -p ${HOME}/.config/lxqt && \
         echo '[General]' >> ${HOME}/.config/lxqt/lxqt.conf && \
-        echo 'theme=kde-plasma' >> ${HOME}/.config/lxqt/lxqt.conf
+        echo 'theme=kde-plasma' >> ${HOME}/.config/lxqt/lxqt.conf \
+        && \
+        mkdir -p ${HOME}/.config/pcmanfm-qt/lxqt && \
+        echo '[Desktop]' >> ${HOME}/.config/pcmanfm-qt/lxqt/settings.conf && \
+        echo 'Wallpaper=/usr/share/lxqt/themes/kde-plasma/kde-plasma.png' >> ${HOME}/.config/pcmanfm-qt/lxqt/settings.conf && \
+        echo 'WallpaperMode=stretch' >> ${HOME}/.config/pcmanfm-qt/lxqt/settings.conf
 
 
 ENTRYPOINT ["expect", "./startup.sh"]
