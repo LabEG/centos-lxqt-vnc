@@ -51,7 +51,8 @@ WORKDIR ${HOME}
 USER headless
 
 RUN mkdir -p ${HOME}/.config/lxqt \
-        echo '[General]' > ${HOME}/.config/lxqt/lxqt.conf \
+        touch ${HOME}/.config/lxqt/lxqt.conf \
+        echo '[General]' >> ${HOME}/.config/lxqt/lxqt.conf \
         echo 'theme=kde-plasma' >> ${HOME}/.config/lxqt/lxqt.conf
 
 ENTRYPOINT ["expect", "./startup.sh"]
