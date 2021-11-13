@@ -34,7 +34,8 @@ RUN dnf install -y \
 RUN /bin/dbus-uuidgen --ensure && \
         useradd headless && \
         echo "centos" | passwd --stdin root && \
-        echo "centos" | passwd --stdin headless
+        echo "centos" | passwd --stdin headless && \
+        usermod -aG wheel headless
 
 
 COPY ./startup.sh ${HOME}
