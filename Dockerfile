@@ -1,5 +1,5 @@
 
-FROM fedora:34
+FROM fedora:latest
 
 
 LABEL maintainer="labeg@mail.ru" \
