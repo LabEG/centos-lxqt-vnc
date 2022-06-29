@@ -43,16 +43,18 @@ if { ! [file exists $HOME/.issetpassword] } {
     expect eof
 
     system "echo 'true' > $HOME/.issetpassword"
-}
 
-# launch vnc
-spawn /usr/bin/vncserver :1 -fg -geometry $SCREEN_RESOLUTION
-expect "Password:"
-send "$PASSWORD\r"
-expect "Verify:"
-send "$PASSWORD\r"
-expect "Would you like to enter a view-only password (y/n)?"
-send "n\r"
+    # launch vnc
+    spawn /usr/bin/vncserver :1 -fg -geometry $SCREEN_RESOLUTION
+    expect "Password:"
+    send "$PASSWORD\r"
+    expect "Verify:"
+    send "$PASSWORD\r"
+    expect "Would you like to enter a view-only password (y/n)?"
+    send "n\r"
+} else {
+    spawn /usr/bin/vncserver :1 -fg -geometry $SCREEN_RESOLUTION
+}
 
 set timeout -1
 expect eof
