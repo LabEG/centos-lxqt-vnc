@@ -25,7 +25,7 @@ RUN dnf install -y \
         && \
         strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 \
         && \
-        echo 'LANG=en_US.UTF-8' > LANG=en_US.UTF-8 \
+        echo 'LANG=en_US.UTF-8' > /etc/default/locale \
         && \
         dnf clean all \
         && \
