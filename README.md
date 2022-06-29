@@ -23,9 +23,11 @@ docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labe
 ```
 
 ### Parameters
-- `-e password='YOUR_VNC_PASSWORD'` - password for VNC connections.
-- `-e resolution='1920x1080'` - resolution for virtual screen.
-- `--shm-size='64m'` - extend if firefox browser is crashing.
+- `-e password='YOUR_VNC_PASSWORD'` - required, password for VNC connections.
+- `-e user_password='YOUR_VNC_PASSWORD'` - optional, password for user *headless*. By default, will be used *password* variable.
+- `-e root_password='YOUR_VNC_PASSWORD'` - optional, password for *root* user. By default, will be used *user_password* variable, if it is not specified then *password* variable.
+- `-e resolution='1920x1080'` - optional, resolution for virtual screen.
+- `--shm-size='64m'` - optional, extend if firefox browser is crashing.
 
 ### FAQ
 - Default root and user password is 'centos'. Change it on first vnc connection for more security.

@@ -20,12 +20,10 @@ RUN dnf install -y \
             lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-qtplugin lxqt-runner \
             lxqt-session pcmanfm-qt \
             dejavu-sans-mono-fonts \
-            gnome-terminal nano htop expect sudo \
+            xterm nano htop expect sudo \
             passwd binutils wget \
         && \
         strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 \
-        && \
-        echo 'LANG=en_US.UTF-8' > /etc/default/locale \
         && \
         dnf clean all \
         && \
