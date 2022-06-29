@@ -30,7 +30,6 @@ docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labe
 - `--shm-size='64m'` - optional, extend if firefox browser is crashing.
 
 ### FAQ
-- Default root and user password is 'centos'. Change it on first vnc connection for more security.
 - For change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select nice to you theme, example Kde-Plasma.
 - For change OpenBox theme open Menu > Preferences > LXQt settings > Opebox Settings and select nice to you theme, example Clearlooks.
 
