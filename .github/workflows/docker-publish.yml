@@ -37,4 +37,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:38, labeg/centos-lxqt-vnc:38.1
+          tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:38, labeg/centos-lxqt-vnc:38.2
