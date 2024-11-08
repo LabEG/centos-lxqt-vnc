@@ -36,4 +36,4 @@ jobs:
         with:
           push: true
           tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:41, labeg/centos-lxqt-vnc:41.0
-          platforms: linux/amd64,linux/arm64/v8
+          platforms: linux/amd64
