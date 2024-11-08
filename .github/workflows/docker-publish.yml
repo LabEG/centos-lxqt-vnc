@@ -10,8 +10,6 @@ on:
     - cron: '19 17 * * *'
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -37,4 +35,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:40, labeg/centos-lxqt-vnc:40.0
+          tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:41, labeg/centos-lxqt-vnc:41.0
+          platforms: linux/amd64,linux/arm64/v8
