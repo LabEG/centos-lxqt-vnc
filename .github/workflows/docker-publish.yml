@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:41, labeg/centos-lxqt-vnc:41.1
+          tags: labeg/centos-lxqt-vnc:latest, labeg/centos-lxqt-vnc:42, labeg/centos-lxqt-vnc:42.0
           platforms: linux/amd64, linux/arm64/v8
           cache-from: type=registry,ref=labeg/centos-lxqt-vnc:latest
           cache-to: type=inline

@@ -1,5 +1,5 @@
 
-FROM fedora:41
+FROM fedora:42
 
 
 LABEL maintainer="labeg@mail.ru" \
