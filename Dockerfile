@@ -23,8 +23,6 @@ RUN dnf install -y \
             xterm nano htop expect sudo \
             passwd cracklib-dicts binutils wget \
         && \
-        # strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 \
-        # && \
         dnf clean all \
         && \
         rm -rf /var/cache/dnf/*
