@@ -1,7 +1,6 @@
-
 # Docker image with LXQt Desktop over headless VNC environments
 
-## Centos is replaced by Fedora after [this news](https://blog.centos.org/2020/12/future-is-centos-stream/).
+## Centos is replaced by Fedora after [this news](https://blog.centos.org/2020/12/future-is-centos-stream/)
 
 This repository contains a Docker image with minimal Desktop installation and includes: Fedora minimal + OpenBox + LXQt + TigerVNC-Server.
 
@@ -16,6 +15,13 @@ All other software you can install yourself.
 The source code is located on the GitHub repository here:
 
 [https://github.com/LabEG/centos-lxqt-vnc](https://github.com/LabEG/centos-lxqt-vnc)
+
+## Supported Platforms
+
+This Docker image is built for multiple architectures:
+
+- linux/amd64
+- linux/arm64/v8
 
 ## Try
 
@@ -43,9 +49,9 @@ docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labe
 
 ## FAQ
 
-- For change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select nice to you theme, example Kde-Plasma.
+- To change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select a theme that you like, for example Kde-Plasma.
 
-- For change OpenBox theme open Menu > Preferences > LXQt settings > Opebox Settings and select nice to you theme, example Clearlooks.
+- To change OpenBox theme open Menu > Preferences > LXQt settings > OpenBox Settings and select a theme that you like, for example Clearlooks.
 
 ## Build
 
