@@ -7,7 +7,7 @@ name: Docker
 
 on:
   schedule:
-    - cron: '19 17 * * *'
+    - cron: '0 4 * * 6'
   push:
     branches: [ master ]
   workflow_dispatch:

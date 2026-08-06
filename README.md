@@ -12,7 +12,7 @@ A lightweight Docker image providing a complete desktop environment accessible v
 
 - Minimal footprint with essential desktop components
 - Multi-architecture support (amd64, arm64)
-- Automated daily builds for latest security updates
+- Automated weekly builds every Saturday at 04:00 UTC for latest security updates
 - Customizable display resolution
 - Easy VNC access configuration
 
