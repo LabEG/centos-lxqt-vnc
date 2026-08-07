@@ -64,9 +64,9 @@ RUN mkdir -p ${HOME}/.config/lxqt && \
         && \
         mkdir -p ${HOME}/.config/lxqt/ && \
         echo '[quicklaunch]' >> ${HOME}/.config/lxqt/panel.conf && \
-        echo 'apps\1\desktop=/usr/share/applications/qterminal.desktop' >> ${HOME}/.config/lxqt/panel.conf && \
-        echo 'apps\2\desktop=/usr/share/applications/pcmanfm-qt.desktop' >> ${HOME}/.config/lxqt/panel.conf && \
-        echo 'apps\size=3' >> ${HOME}/.config/lxqt/panel.conf
+        echo 'apps/1/desktop=/usr/share/applications/qterminal.desktop' >> ${HOME}/.config/lxqt/panel.conf && \
+        echo 'apps/2/desktop=/usr/share/applications/pcmanfm-qt.desktop' >> ${HOME}/.config/lxqt/panel.conf && \
+        echo 'apps/size=3' >> ${HOME}/.config/lxqt/panel.conf
 
 
 ENTRYPOINT ["expect", "./startup.sh"]
